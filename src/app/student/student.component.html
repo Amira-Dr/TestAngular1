@@ -1,0 +1,33 @@
+<!-- Liste  -->
+<div class="container my-3">
+    <div class="row">
+<div class="col">
+    <h3>students list</h3>
+    <table class="table">
+        <thead class="table-dark">
+            <tr>
+                <td scope="col">id</td>
+                <td scope="col">name</td>
+                <td scope="col">email</td>
+                <td scope="col">gender</td>
+                <td scope="col">action</td>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let student of students; let index = index">
+                <td>{{ index + 1 }}</td>
+                <td>{{ student.name }}</td>
+                <td>{{ student.email }}</td>
+                <td>{{ student.gender }}</td>
+                <td>
+                    <a class="mx-1 btn btn-warning btn-small" routerLinkActivate="active" routerLink="/showstudent"  >show</a>
+                    
+                </td>                
+            </tr>
+        </tbody>
+    </table>
+
+        
+                      <a class="mx-1 btn btn-warning btn-small" routerLinkActivate="active" routerLink="/addstudent"  >add</a>
+      
+</div></div></div>

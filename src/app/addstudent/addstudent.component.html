@@ -1,0 +1,61 @@
+
+<div class="col">
+    <h3>addstudent</h3>
+    <form [formGroup]="studentForm" (ngSubmit)="submit()">
+        <label class="m-3">name:
+            <input 
+                type="text"
+                id="studentName"
+                name="studentName" 
+                formControlName="studentName"
+            />
+            <p 
+                class="text-danger"
+                *ngIf="studentName.touched && studentName?.errors?.['required']"
+            >
+                this field is required
+            </p>
+        </label>
+        <br>
+        <label class="m-3">email: 
+            <input 
+                type="email" 
+                id="studentEmail"
+                name="studentEmail" 
+                formControlName="studentEmail"
+            />
+            <p 
+                class="text-danger"
+                *ngIf="studentEmail?.touched && studentEmail?.errors?.['required']"
+            >
+                this field is required
+            </p>
+            <p 
+                class="text-danger"
+                *ngIf="studentEmail?.touched && studentEmail?.errors?.['email']"
+            >
+                this field should be a valid email
+            </p>
+        </label>
+        <br>
+        <label class="m-3">gender:
+            <input 
+                type="text"
+                id="studentName"
+                name="studentName" 
+                formControlName="studentName"
+            />
+            <p 
+                class="text-danger"
+                *ngIf="studentName.touched && studentName?.errors?.['required']"
+            >
+                this field is required
+            </p>
+        </label>
+        <br>
+        <button type="submit" [disabled]="!studentForm.valid" 
+      >submit</button>
+
+    </form>
+
+</div>
